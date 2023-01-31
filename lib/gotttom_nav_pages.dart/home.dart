@@ -53,7 +53,7 @@ class _HomePageState extends State<HomePage> {
                             Text("Let's Start Learning Today",
                                 style: GoogleFonts.poppins(
                                   fontWeight: FontWeight.w500,
-                                  color: Color.fromARGB(223, 255, 255, 255),
+                                  color: const Color.fromARGB(223, 255, 255, 255),
                                 )),
                           ],
                         ),

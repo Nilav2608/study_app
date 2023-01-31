@@ -55,24 +55,39 @@ class GetStartedPage extends StatelessWidget {
             const SizedBox(
               height: 35,
             ),
-            GestureDetector(
-              onTap: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) {
-                  return const HomeMain();
-                }));
-              },
-              child: Container(
-                width: 160,
-                height: 50,
-                decoration: BoxDecoration(
-                    color: const Color.fromARGB(255, 61, 92, 255),
-                    borderRadius: BorderRadius.circular(10)),
-                child: const Center(
-                  child: Text(
-                    "Get Started",
-                    style: TextStyle(color: Colors.white),
+            Padding(
+              padding: const EdgeInsets.all(20.0),
+              child: Row(
+                children: [
+                  const SizedBox(
+                    width: 16,
                   ),
-                ),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) {
+                        return const HomeMain();
+                      }));
+                    },
+                    child: Container(
+                      width: 140,
+                      height: 50,
+                      decoration: BoxDecoration(
+                          color: const Color.fromARGB(255, 61, 92, 255),
+                          borderRadius: BorderRadius.circular(10)),
+                      child: const Center(
+                        child: Text(
+                          "Sign up",
+                          style: TextStyle(color: Colors.white),
+                        ),
+                      ),
+                    ),
+                  ),
+                  const SizedBox(
+                    width: 14,
+                  ),
+                  
+                ],
               ),
             )
           ],
