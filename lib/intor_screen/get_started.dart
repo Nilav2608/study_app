@@ -86,7 +86,27 @@ class GetStartedPage extends StatelessWidget {
                   const SizedBox(
                     width: 14,
                   ),
-                  
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) {
+                        return const HomeMain();
+                      }));
+                    },
+                    child: Container(
+                      width: 140,
+                      height: 50,
+                      decoration: BoxDecoration(
+                          color: const Color.fromARGB(255, 133, 133, 151),
+                          borderRadius: BorderRadius.circular(10)),
+                      child: const Center(
+                        child: Text(
+                          "Log in",
+                          style: TextStyle(color: Colors.white),
+                        ),
+                      ),
+                    ),
+                  ),
                 ],
               ),
             )
