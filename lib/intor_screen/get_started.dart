@@ -9,7 +9,7 @@ class GetStartedPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 31, 31, 57),
+      backgroundColor: const Color.fromARGB(255, 31, 31, 57),
       // backgroundColor: Colors.white,
       body: Center(
         child: Column(
@@ -25,7 +25,7 @@ class GetStartedPage extends StatelessWidget {
             const SizedBox(
               height: 65,
             ),
-            Container(
+            SizedBox(
               height: 66,
               width: 168,
               child: Text(
