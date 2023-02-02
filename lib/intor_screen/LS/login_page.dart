@@ -53,11 +53,11 @@ class _LoginPageState extends State<LoginPage> {
                           "Your email",
                           style: GoogleFonts.poppins(
                               fontSize: 14,
-                              color: Color.fromARGB(255, 133, 133, 151)),
+                              color: const Color.fromARGB(255, 133, 133, 151)),
                         ),
                         Container(
                           decoration: BoxDecoration(
-                              color: Color.fromARGB(255, 62, 62, 85),
+                              color: const Color.fromARGB(255, 62, 62, 85),
                               borderRadius: BorderRadius.circular(12)),
                           child: const Padding(
                             padding: EdgeInsets.only(left: 20.0),
@@ -79,11 +79,11 @@ class _LoginPageState extends State<LoginPage> {
                           "Password",
                           style: GoogleFonts.poppins(
                               fontSize: 14,
-                              color: Color.fromARGB(255, 133, 133, 151)),
+                              color: const Color.fromARGB(255, 133, 133, 151)),
                         ),
                         Container(
                           decoration: BoxDecoration(
-                              color: Color.fromARGB(255, 62, 62, 85),
+                              color: const Color.fromARGB(255, 62, 62, 85),
                               borderRadius: BorderRadius.circular(12)),
                           child: const Padding(
                             padding: EdgeInsets.only(left: 20.0),
@@ -100,10 +100,10 @@ class _LoginPageState extends State<LoginPage> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.end,
                           children: const [
-                            Text(
-                              "Forgot password?",
-                              style: TextStyle( color: Color.fromARGB(255, 184, 184, 210),
-                            ))
+                            Text("Forgot password?",
+                                style: TextStyle(
+                                  color: Color.fromARGB(255, 184, 184, 210),
+                                ))
                           ],
                         ),
                         const SizedBox(
@@ -113,7 +113,7 @@ class _LoginPageState extends State<LoginPage> {
                           width: 327,
                           height: 50,
                           decoration: BoxDecoration(
-                              color: Color.fromARGB(255, 61, 92, 255),
+                              color: const Color.fromARGB(255, 61, 92, 255),
                               borderRadius: BorderRadius.circular(10)),
                           child: const Center(
                             child: Text(
@@ -125,6 +125,69 @@ class _LoginPageState extends State<LoginPage> {
                             ),
                           ),
                         ),
+                        const SizedBox(
+                          height: 20,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: const [
+                            Text("Don't have an account?",
+                                style: TextStyle(
+                                  color: Color.fromARGB(255, 184, 184, 210),
+                                )),
+                            Text("Sign In?",
+                                style: TextStyle(
+                                  color: Color.fromARGB(255, 61, 92, 255),
+                                ))
+                          ],
+                        ),
+                        const SizedBox(
+                          height: 20,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: const [
+                            Expanded(
+                              child: Divider(
+                                color: const Color.fromARGB(255, 133, 133, 151),
+                                thickness: 1.0,
+                              ),
+                            ),
+                            Text("Or login with",
+                                style: TextStyle(
+                                  color: Color.fromARGB(255, 184, 184, 210),
+                                )),
+                            Expanded(
+                              child: Divider(
+                                color: const Color.fromARGB(255, 133, 133, 151),
+                                thickness: 1.0,
+                              ),
+                            ),
+                          ],
+                        ),
+                        const SizedBox(
+                          height: 20,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            GestureDetector(
+                              child: Image.asset(
+                                "assets/google.png",
+                                width: 34,
+                                height: 34,
+                              ),
+                            ),
+                            const SizedBox(width: 38,),
+                            GestureDetector(
+                              child: Image.asset(
+                                "assets/fb.png",
+                                width: 34,
+                                height: 34,
+                              ),
+                            )
+                          ],
+                        )
                       ],
                     ),
                   ),
