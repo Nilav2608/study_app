@@ -1,3 +1,4 @@
+import 'package:course_app/gotttom_nav_pages.dart/home.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -147,19 +148,27 @@ class _LoginPageState extends State<LoginPage> {
                         const SizedBox(
                           height: 20,
                         ),
-                        Container(
-                          width: 327,
-                          height: 50,
-                          decoration: BoxDecoration(
-                              color: const Color.fromARGB(255, 61, 92, 255),
-                              borderRadius: BorderRadius.circular(10)),
-                          child: const Center(
-                            child: Text(
-                              "Log In",
-                              style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.bold),
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.push(context,
+                             MaterialPageRoute(builder: (context){
+                              return const HomePage();
+                             }));
+                          },
+                          child: Container(
+                            width: 327,
+                            height: 50,
+                            decoration: BoxDecoration(
+                                color: const Color.fromARGB(255, 61, 92, 255),
+                                borderRadius: BorderRadius.circular(10)),
+                            child:  Center(
+                              child: Text(
+                                "Log In",
+                                style: GoogleFonts.poppins(
+                                    color: Colors.white,
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.bold),
+                              ),
                             ),
                           ),
                         ),
