@@ -10,6 +10,8 @@ class LoginPage extends StatefulWidget {
 
 class _LoginPageState extends State<LoginPage> {
   bool passwordVisible = false;
+  final emailController = TextEditingController();
+  final passwordController = TextEditingController();
 
   @override
   void initState() {
@@ -56,13 +58,14 @@ class _LoginPageState extends State<LoginPage> {
                         const SizedBox(
                           height: 15,
                         ),
-                        //*Email field/////////////////////////////////////////
+                        
                         Text(
                           "Your email",
                           style: GoogleFonts.poppins(
                               fontSize: 14,
                               color: const Color.fromARGB(255, 133, 133, 151)),
                         ),
+                        //*Email field/////////////////////////////////////////
                         Container(
                           decoration: BoxDecoration(
                               color: const Color.fromARGB(255, 62, 62, 85),
@@ -70,14 +73,12 @@ class _LoginPageState extends State<LoginPage> {
                           child: Padding(
                             padding: const EdgeInsets.only(left: 20.0),
                             child: TextField(
-                              // controller: passwordController,
+                              controller: emailController,
                               style: GoogleFonts.poppins(
                                   fontSize: 14,
                                   fontWeight: FontWeight.bold,
                                   color: Colors.white),
                               decoration: const InputDecoration(
-                                // labelText: "Email",
-                                // hintTextDirection: TextDecoration(),
                                 border: InputBorder.none,
                                 hintStyle: TextStyle(
                                     color: Color.fromARGB(115, 255, 255, 255)),
@@ -103,7 +104,7 @@ class _LoginPageState extends State<LoginPage> {
                           child: Padding(
                             padding: const EdgeInsets.only(left: 20.0),
                             child: TextField(
-                              // controller: passwordController,
+                              controller: passwordController,
                               style: GoogleFonts.poppins(
                                   fontSize: 14,
                                   color: Color.fromARGB(255, 255, 255, 255),
@@ -117,8 +118,7 @@ class _LoginPageState extends State<LoginPage> {
                                 hintText: 'Enter your password',
                                 suffixIcon: IconButton(
                                   color: Color.fromARGB(121, 255, 255, 255),
-                                  icon: Icon(
-                                    passwordVisible
+                                  icon: Icon(passwordVisible
                                       ? Icons.visibility
                                       : Icons.visibility_off),
                                   onPressed: () {
