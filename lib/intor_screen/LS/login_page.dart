@@ -9,6 +9,14 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+  bool passwordVisible = false;
+
+  @override
+  void initState() {
+    passwordVisible = true;
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -59,17 +67,22 @@ class _LoginPageState extends State<LoginPage> {
                           decoration: BoxDecoration(
                               color: const Color.fromARGB(255, 62, 62, 85),
                               borderRadius: BorderRadius.circular(12)),
-                          child: const Padding(
-                            padding: EdgeInsets.only(left: 20.0),
+                          child: Padding(
+                            padding: const EdgeInsets.only(left: 20.0),
                             child: TextField(
                               // controller: passwordController,
-                              style: TextStyle(color: Colors.white),
-                              decoration: InputDecoration(
-                                  // fillColor: Colors.white,
-                                  // hintTextDirection: TextDecoration(),
-                                  border: InputBorder.none,
-                                  hintStyle: TextStyle(color: Color.fromARGB(255, 255, 255, 255)),
-                                  hintText: 'Enter your email'),
+                              style: GoogleFonts.poppins(
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white),
+                              decoration: const InputDecoration(
+                                // labelText: "Email",
+                                // hintTextDirection: TextDecoration(),
+                                border: InputBorder.none,
+                                hintStyle: TextStyle(
+                                    color: Color.fromARGB(115, 255, 255, 255)),
+                                hintText: 'Enter your email',
+                              ),
                             ),
                           ),
                         ),
@@ -87,17 +100,38 @@ class _LoginPageState extends State<LoginPage> {
                           decoration: BoxDecoration(
                               color: const Color.fromARGB(255, 62, 62, 85),
                               borderRadius: BorderRadius.circular(12)),
-                          child: const Padding(
-                            padding: EdgeInsets.only(left: 20.0),
+                          child: Padding(
+                            padding: const EdgeInsets.only(left: 20.0),
                             child: TextField(
                               // controller: passwordController,
-                              style: TextStyle(color: Colors.white),
-                              obscureText: true,
+                              style: GoogleFonts.poppins(
+                                  fontSize: 14,
+                                  color: Color.fromARGB(255, 255, 255, 255),
+                                  fontWeight: FontWeight.bold),
+                              obscureText: passwordVisible,
                               decoration: InputDecoration(
-                                  
-                                  border: InputBorder.none,
-                                  hintStyle: TextStyle(color: Colors.white),
-                                  hintText: 'Enter your password'),
+                                border: InputBorder.none,
+                                hintStyle: const TextStyle(
+                                  color: Color.fromARGB(115, 255, 255, 255),
+                                ),
+                                hintText: 'Enter your password',
+                                suffixIcon: IconButton(
+                                  color: Color.fromARGB(121, 255, 255, 255),
+                                  icon: Icon(
+                                    passwordVisible
+                                      ? Icons.visibility
+                                      : Icons.visibility_off),
+                                  onPressed: () {
+                                    setState(
+                                      () {
+                                        passwordVisible = !passwordVisible;
+                                      },
+                                    );
+                                  },
+                                ),
+                              ),
+                              keyboardType: TextInputType.visiblePassword,
+                              textInputAction: TextInputAction.done,
                             ),
                           ),
                         ),
@@ -182,7 +216,9 @@ class _LoginPageState extends State<LoginPage> {
                                 height: 34,
                               ),
                             ),
-                            const SizedBox(width: 38,),
+                            const SizedBox(
+                              width: 38,
+                            ),
                             GestureDetector(
                               child: Image.asset(
                                 "assets/fb.png",
