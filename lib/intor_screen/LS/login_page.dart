@@ -48,7 +48,7 @@ class _LoginPageState extends State<LoginPage> {
                         const SizedBox(
                           height: 15,
                         ),
-                        //Email field
+                        //*Email field/////////////////////////////////////////
                         Text(
                           "Your email",
                           style: GoogleFonts.poppins(
@@ -63,10 +63,12 @@ class _LoginPageState extends State<LoginPage> {
                             padding: EdgeInsets.only(left: 20.0),
                             child: TextField(
                               // controller: passwordController,
-
+                              style: TextStyle(color: Colors.white),
                               decoration: InputDecoration(
+                                  // fillColor: Colors.white,
+                                  // hintTextDirection: TextDecoration(),
                                   border: InputBorder.none,
-                                  hintStyle: TextStyle(color: Colors.white),
+                                  hintStyle: TextStyle(color: Color.fromARGB(255, 255, 255, 255)),
                                   hintText: 'Enter your email'),
                             ),
                           ),
@@ -74,12 +76,12 @@ class _LoginPageState extends State<LoginPage> {
                         const SizedBox(
                           height: 15,
                         ),
-                        //Password field
+                        //*Password field///////////////////////////////////////////////
                         Text(
                           "Password",
                           style: GoogleFonts.poppins(
                               fontSize: 14,
-                              color: const Color.fromARGB(255, 133, 133, 151)),
+                              color: const Color.fromARGB(121, 255, 255, 255)),
                         ),
                         Container(
                           decoration: BoxDecoration(
@@ -89,8 +91,10 @@ class _LoginPageState extends State<LoginPage> {
                             padding: EdgeInsets.only(left: 20.0),
                             child: TextField(
                               // controller: passwordController,
+                              style: TextStyle(color: Colors.white),
                               obscureText: true,
                               decoration: InputDecoration(
+                                  
                                   border: InputBorder.none,
                                   hintStyle: TextStyle(color: Colors.white),
                                   hintText: 'Enter your password'),
