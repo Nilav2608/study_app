@@ -1,7 +1,4 @@
-import 'package:course_app/home_main.dart';
 import 'package:course_app/intor_screen/LS/auth_page.dart';
-import 'package:course_app/intor_screen/LS/login_page.dart';
-import 'package:course_app/intor_screen/LS/signin_page.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';

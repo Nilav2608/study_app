@@ -61,7 +61,7 @@ class _SignInPageState extends State<SignInPage> {
                           topLeft: Radius.circular(20)),
                       color: Color.fromARGB(255, 47, 47, 66)),
                   child: Padding(
-                    padding: EdgeInsets.all(20.0),
+                    padding: const EdgeInsets.all(20.0),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -211,13 +211,13 @@ class _SignInPageState extends State<SignInPage> {
                                 });
                               },
                             ),
-                            Container(
+                            SizedBox(
                               height: 36,
                               width: 253,
                               child: Text(
                                 "By creating an account you have to agree the terms and conditions",
                                 style: GoogleFonts.poppins(
-                                    color: Color.fromARGB(255, 184, 184, 210),
+                                    color: const Color.fromARGB(255, 184, 184, 210),
                                     fontSize: 12,
                                     fontWeight: FontWeight.normal),
                               ),

@@ -1,4 +1,3 @@
-import 'package:course_app/gotttom_nav_pages.dart/home.dart';
 import 'package:course_app/home_main.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -201,7 +200,7 @@ class _LoginPageState extends State<LoginPage> {
                           children: const [
                             Expanded(
                               child: Divider(
-                                color: const Color.fromARGB(255, 133, 133, 151),
+                                color: Color.fromARGB(255, 133, 133, 151),
                                 thickness: 1.0,
                               ),
                             ),
@@ -211,7 +210,7 @@ class _LoginPageState extends State<LoginPage> {
                                 )),
                             Expanded(
                               child: Divider(
-                                color: const Color.fromARGB(255, 133, 133, 151),
+                                color: Color.fromARGB(255, 133, 133, 151),
                                 thickness: 1.0,
                               ),
                             ),
