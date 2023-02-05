@@ -1,10 +1,11 @@
 import 'package:course_app/gotttom_nav_pages.dart/home.dart';
+import 'package:course_app/home_main.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class LoginPage extends StatefulWidget {
-  const LoginPage({super.key});
-
+  const LoginPage({super.key,required this.showSigninPage});
+  final VoidCallback? showSigninPage;
   @override
   State<LoginPage> createState() => _LoginPageState();
 }
@@ -59,7 +60,7 @@ class _LoginPageState extends State<LoginPage> {
                         const SizedBox(
                           height: 15,
                         ),
-                        
+
                         Text(
                           "Your email",
                           style: GoogleFonts.poppins(
@@ -151,9 +152,9 @@ class _LoginPageState extends State<LoginPage> {
                         GestureDetector(
                           onTap: () {
                             Navigator.push(context,
-                             MaterialPageRoute(builder: (context){
-                              return const HomePage();
-                             }));
+                                MaterialPageRoute(builder: (context) {
+                              return const HomeMain();
+                            }));
                           },
                           child: Container(
                             width: 327,
@@ -161,7 +162,7 @@ class _LoginPageState extends State<LoginPage> {
                             decoration: BoxDecoration(
                                 color: const Color.fromARGB(255, 61, 92, 255),
                                 borderRadius: BorderRadius.circular(10)),
-                            child:  Center(
+                            child: Center(
                               child: Text(
                                 "Log In",
                                 style: GoogleFonts.poppins(
@@ -177,15 +178,19 @@ class _LoginPageState extends State<LoginPage> {
                         ),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
-                          children: const [
-                            Text("Don't have an account?",
+                          children:  [
+                            const Text("Don't have an account?",
                                 style: TextStyle(
                                   color: Color.fromARGB(255, 184, 184, 210),
                                 )),
-                            Text("Sign In?",
-                                style: TextStyle(
-                                  color: Color.fromARGB(255, 61, 92, 255),
-                                ))
+                            GestureDetector(
+                              onTap: widget.showSigninPage,
+                              child: const Text(
+                                  "Sign Up?",
+                                  style: TextStyle(
+                                    color: Color.fromARGB(255, 61, 92, 255),
+                                  )),
+                            )
                           ],
                         ),
                         const SizedBox(

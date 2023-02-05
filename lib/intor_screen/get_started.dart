@@ -1,4 +1,5 @@
 import 'package:course_app/home_main.dart';
+import 'package:course_app/intor_screen/LS/auth_page.dart';
 import 'package:course_app/intor_screen/LS/login_page.dart';
 import 'package:course_app/intor_screen/LS/signin_page.dart';
 import 'package:flutter/material.dart';
@@ -29,7 +30,7 @@ class GetStartedPage extends StatelessWidget {
             ),
             SizedBox(
               height: 66,
-              width: 168,
+              width: 192,
               child: Text(
                 "Create your own study plan",
                 textAlign: TextAlign.center,
@@ -68,7 +69,7 @@ class GetStartedPage extends StatelessWidget {
                     onTap: () {
                       Navigator.push(context,
                           MaterialPageRoute(builder: (context) {
-                        return const SignInPage();
+                        return const AuthPage();
                       }));
                     },
                     child: Container(
@@ -92,7 +93,7 @@ class GetStartedPage extends StatelessWidget {
                     onTap: () {
                       Navigator.push(context,
                           MaterialPageRoute(builder: (context) {
-                        return const LoginPage();
+                        return const AuthPage();
                       }));
                     },
                     child: Container(

@@ -1,25 +1,33 @@
+import 'package:course_app/intor_screen/LS/login_page.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class SignInPage extends StatefulWidget {
-  const SignInPage({super.key});
-
+  const SignInPage({super.key, required this.showRegisterPage});
+  final VoidCallback? showRegisterPage;
   @override
   State<SignInPage> createState() => _SignInPageState();
 }
 
 class _SignInPageState extends State<SignInPage> {
   bool passwordVisible = false;
+  // bool showRegisterPage = true;
+  bool isChecked = false;
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
   final confirmPasswordController = TextEditingController();
-  bool isChecked = false;
 
   @override
   void initState() {
     passwordVisible = true;
     super.initState();
   }
+
+  // toggleSwitch() {
+  //   setState(() {
+  //     showRegisterPage = !showRegisterPage;
+  //   });
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -84,7 +92,7 @@ class _SignInPageState extends State<SignInPage> {
                                 border: InputBorder.none,
                                 hintStyle: TextStyle(
                                     color: Color.fromARGB(115, 255, 255, 255)),
-                                hintText: 'Enter your email',
+                                hintText: 'enter your email',
                               ),
                             ),
                           ),
@@ -117,7 +125,7 @@ class _SignInPageState extends State<SignInPage> {
                                 hintStyle: const TextStyle(
                                   color: Color.fromARGB(115, 255, 255, 255),
                                 ),
-                                hintText: 'Enter your password',
+                                hintText: 'enter your password',
                                 suffixIcon: IconButton(
                                   color: Color.fromARGB(121, 255, 255, 255),
                                   icon: Icon(passwordVisible
@@ -163,7 +171,7 @@ class _SignInPageState extends State<SignInPage> {
                                 hintStyle: TextStyle(
                                   color: Color.fromARGB(115, 255, 255, 255),
                                 ),
-                                hintText: 'Enter your password',
+                                hintText: 'comfirm your password',
                               ),
                               keyboardType: TextInputType.visiblePassword,
                               textInputAction: TextInputAction.done,
@@ -214,7 +222,6 @@ class _SignInPageState extends State<SignInPage> {
                                     fontWeight: FontWeight.normal),
                               ),
                             ),
-
                           ],
                         ),
                         const SizedBox(
@@ -222,17 +229,20 @@ class _SignInPageState extends State<SignInPage> {
                         ),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
-                          children: const [
-                            Text("Already have an account?",
+                          children: [
+                            const Text("Already have an account?",
                                 style: TextStyle(
                                   color: Color.fromARGB(255, 184, 184, 210),
                                 )),
-                            Text("Log In?",
-                                style: TextStyle(
-                                    color: Color.fromARGB(255, 61, 92, 255),
-                                    decoration: TextDecoration.underline,
-                                    decorationColor:
-                                        Color.fromARGB(255, 61, 92, 255)))
+                            GestureDetector(
+                              onTap: widget.showRegisterPage,
+                              child: const Text("Log In?",
+                                  style: TextStyle(
+                                      color: Color.fromARGB(255, 61, 92, 255),
+                                      decoration: TextDecoration.underline,
+                                      decorationColor:
+                                          Color.fromARGB(255, 61, 92, 255))),
+                            )
                           ],
                         ),
                       ],
