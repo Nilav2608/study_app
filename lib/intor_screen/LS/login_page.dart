@@ -1,9 +1,10 @@
 import 'package:course_app/home_main.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class LoginPage extends StatefulWidget {
-  const LoginPage({super.key,required this.showSigninPage});
+  const LoginPage({super.key, required this.showSigninPage});
   final VoidCallback? showSigninPage;
   @override
   State<LoginPage> createState() => _LoginPageState();
@@ -13,6 +14,60 @@ class _LoginPageState extends State<LoginPage> {
   bool passwordVisible = false;
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
+
+   Future logIn() async {
+    //Show loading circle
+    showDialog(
+        context: context,
+        builder: (context) {
+          return const Center(
+            child: CircularProgressIndicator(),
+          );
+        });
+    try {
+      await FirebaseAuth.instance.signInWithEmailAndPassword(
+          email: emailController.text, password: passwordController.text);
+
+      Navigator.pop(context);
+    } on FirebaseAuthException catch (e) {
+      Navigator.pop(context);
+      //wrong email
+      if (e.code == 'user-not-found') {
+        wrongEmailMessage();
+      } else if (e.code == 'wrong-password') {
+        wrongPassword();
+      }
+    }
+  }
+
+  @override
+  void dispose() {
+    emailController.dispose();
+    passwordController.dispose();
+    super.dispose();
+  }
+
+  void wrongEmailMessage() {
+    showDialog(
+      context: context,
+      builder: (context) {
+        return const AlertDialog(
+          title: Text("incorrect email"),
+        );
+      },
+    );
+  }
+
+  void wrongPassword() {
+    showDialog(
+      context: context,
+      builder: (context) {
+        return const AlertDialog(
+          title: Text("incorrect password"),
+        );
+      },
+    );
+  }
 
   @override
   void initState() {
@@ -43,9 +98,6 @@ class _LoginPageState extends State<LoginPage> {
                         color: Colors.white),
                   ),
                 ),
-
-
-                
                 Container(
                   width: 375,
                   height: 620,
@@ -152,12 +204,7 @@ class _LoginPageState extends State<LoginPage> {
                           height: 20,
                         ),
                         GestureDetector(
-                          onTap: () {
-                            Navigator.push(context,
-                                MaterialPageRoute(builder: (context) {
-                              return const HomeMain();
-                            }));
-                          },
+                          onTap: logIn,
                           child: Container(
                             width: 327,
                             height: 50,
@@ -180,15 +227,14 @@ class _LoginPageState extends State<LoginPage> {
                         ),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
-                          children:  [
+                          children: [
                             const Text("Don't have an account?",
                                 style: TextStyle(
                                   color: Color.fromARGB(255, 184, 184, 210),
                                 )),
                             GestureDetector(
                               onTap: widget.showSigninPage,
-                              child: const Text(
-                                  "Sign Up?",
+                              child: const Text("Sign Up?",
                                   style: TextStyle(
                                     color: Color.fromARGB(255, 61, 92, 255),
                                   )),

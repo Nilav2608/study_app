@@ -1,4 +1,5 @@
 import 'package:course_app/intor_screen/LS/login_page.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -182,19 +183,22 @@ class _SignInPageState extends State<SignInPage> {
                         const SizedBox(
                           height: 40,
                         ),
-                        Container(
-                          width: 327,
-                          height: 50,
-                          decoration: BoxDecoration(
-                              color: const Color.fromARGB(255, 61, 92, 255),
-                              borderRadius: BorderRadius.circular(10)),
-                          child: Center(
-                            child: Text(
-                              "Create account",
-                              style: GoogleFonts.poppins(
-                                  color: Colors.white,
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.bold),
+                        GestureDetector(
+                          
+                          child: Container(
+                            width: 327,
+                            height: 50,
+                            decoration: BoxDecoration(
+                                color: const Color.fromARGB(255, 61, 92, 255),
+                                borderRadius: BorderRadius.circular(10)),
+                            child: Center(
+                              child: Text(
+                                "Create account",
+                                style: GoogleFonts.poppins(
+                                    color: Colors.white,
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.bold),
+                              ),
                             ),
                           ),
                         ),
