@@ -1,4 +1,4 @@
-import 'package:course_app/LS/login_page.dart';
+import 'package:course_app/login_signUp/login_page.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
