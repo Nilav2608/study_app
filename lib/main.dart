@@ -1,8 +1,9 @@
+import 'package:course_app/Auth_service/stream_builder_file.dart';
 import 'package:flutter/material.dart';
 // ignore: depend_on_referenced_packages
 import 'package:firebase_core/firebase_core.dart';
-import 'intor_screen/LS/firebase_options.dart';
-import 'onbording_page.dart';
+import 'Auth_service/firebase_options.dart';
+// import 'onbording_page.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -24,7 +25,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
         // appBarTheme: AppBarTheme(backgroundColor:  Color.fromARGB(255, 31, 31, 57),)
       ),
-      home: const HomePage(),
+      home: const StreamPage(),
     );
   }
 }

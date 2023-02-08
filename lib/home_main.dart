@@ -1,9 +1,11 @@
-import 'package:course_app/gotttom_nav_pages.dart/account.dart';
-import 'package:course_app/gotttom_nav_pages.dart/courses.dart';
-import 'package:course_app/gotttom_nav_pages.dart/home.dart';
-import 'package:course_app/gotttom_nav_pages.dart/message.dart';
+// import 'package:course_app/gotttom_nav_pages/account.dart';
+import 'package:course_app/gotttom_nav_pages/account.dart';
+import 'package:course_app/gotttom_nav_pages/courses.dart';
+import 'package:course_app/gotttom_nav_pages/home.dart';
+import 'package:course_app/gotttom_nav_pages/message.dart';
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class HomeMain extends StatefulWidget {
   const HomeMain({super.key});

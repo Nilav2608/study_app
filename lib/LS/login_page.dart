@@ -15,7 +15,7 @@ class _LoginPageState extends State<LoginPage> {
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
 
-   Future logIn() async {
+  Future logIn() async {
     //Show loading circle
     showDialog(
         context: context,
@@ -27,8 +27,10 @@ class _LoginPageState extends State<LoginPage> {
     try {
       await FirebaseAuth.instance.signInWithEmailAndPassword(
           email: emailController.text, password: passwordController.text);
+          Navigator.pop(context);
+      
 
-      Navigator.pop(context);
+      // ignore: use_build_context_synchronously
     } on FirebaseAuthException catch (e) {
       Navigator.pop(context);
       //wrong email

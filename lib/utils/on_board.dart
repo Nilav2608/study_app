@@ -1,18 +1,20 @@
-import 'package:course_app/intor_screen/get_started.dart';
-import 'package:course_app/intor_screen/page_one.dart';
-import 'package:course_app/intor_screen/page_two.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+import '../intor_screen/get_started.dart';
+import '../intor_screen/page_one.dart';
+import '../intor_screen/page_two.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+
+class OnboardPage extends StatefulWidget {
+  const OnboardPage({super.key});
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<OnboardPage> createState() => _OnboardPageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _OnboardPageState extends State<OnboardPage> {
+  
   bool onLastPage = false;
   @override
   Widget build(BuildContext context) {

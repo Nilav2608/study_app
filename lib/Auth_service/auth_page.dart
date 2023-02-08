@@ -1,5 +1,5 @@
-import 'package:course_app/intor_screen/LS/login_page.dart';
-import 'package:course_app/intor_screen/LS/signin_page.dart';
+import 'package:course_app/LS/login_page.dart';
+import 'package:course_app/LS/signin_page.dart';
 import 'package:flutter/material.dart';
 
 class AuthPage extends StatefulWidget {

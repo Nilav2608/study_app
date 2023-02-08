@@ -1,5 +1,5 @@
 import 'package:course_app/home_main.dart';
-import 'package:course_app/intor_screen/LS/auth_page.dart';
+import 'package:course_app/utils/on_board.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
@@ -9,15 +9,15 @@ class StreamPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: StreamBuilder(
+      body: StreamBuilder<User?>(
         stream: FirebaseAuth.instance.authStateChanges(),
-        builder: (context, snapshot) {
+        builder: ((context, snapshot) {
           if (snapshot.hasData) {
-            return const HomeMain();
+            return  HomeMain();
           } else {
-            return const AuthPage();
+            return  OnboardPage();
           }
-        },
+        }),
       ),
     );
   }

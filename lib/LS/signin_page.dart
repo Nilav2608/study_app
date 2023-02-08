@@ -1,4 +1,4 @@
-import 'package:course_app/intor_screen/LS/login_page.dart';
+import 'package:course_app/LS/login_page.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -36,9 +36,11 @@ class _SignInPageState extends State<SignInPage> {
       await FirebaseAuth.instance.createUserWithEmailAndPassword(
           email: emailController.text.trim(),
           password: passwordController.text.trim());
+          
     }
     // ignore: use_build_context_synchronously
     Navigator.pop(context);
+    
   }
 
   // / checking
