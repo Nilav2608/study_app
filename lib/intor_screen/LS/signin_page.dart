@@ -23,6 +23,40 @@ class _SignInPageState extends State<SignInPage> {
     passwordVisible = true;
     super.initState();
   }
+    Future signUserUp() async {
+    showDialog(
+        context: context,
+        builder: (context) {
+          return const Center(
+            child: CircularProgressIndicator(),
+          );
+        });
+
+    if (passwordConfirmed()) {
+      await FirebaseAuth.instance.createUserWithEmailAndPassword(
+          email: emailController.text.trim(),
+          password: passwordController.text.trim());
+    }
+    // ignore: use_build_context_synchronously
+    Navigator.pop(context);
+  }
+
+  // / checking
+  bool passwordConfirmed() {
+    if (passwordController.text == confirmPasswordController.text) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  @override
+  void dispose() {
+    emailController.dispose();
+    passwordController.dispose();
+    confirmPasswordController.dispose();
+    super.dispose();
+  }
 
   // toggleSwitch() {
   //   setState(() {
@@ -184,7 +218,7 @@ class _SignInPageState extends State<SignInPage> {
                           height: 40,
                         ),
                         GestureDetector(
-                          
+                          onTap: signUserUp,
                           child: Container(
                             width: 327,
                             height: 50,
