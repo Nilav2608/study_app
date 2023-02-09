@@ -1,7 +1,4 @@
-import 'package:course_app/Auth_service/auth_page.dart';
 import 'package:course_app/Auth_service/stream_builder_file.dart';
-import 'package:course_app/login_signUp/login_page.dart';
-import 'package:course_app/login_signUp/signin_page.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
