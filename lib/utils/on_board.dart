@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+import '../Auth_service/stream_builder_file.dart';
 import '../intor_screen/get_started.dart';
 import '../intor_screen/page_one.dart';
 import '../intor_screen/page_two.dart';
-
 
 class OnboardPage extends StatefulWidget {
   const OnboardPage({super.key});
@@ -14,7 +15,12 @@ class OnboardPage extends StatefulWidget {
 }
 
 class _OnboardPageState extends State<OnboardPage> {
-  
+  // storeOnboardInfo() async {
+  //   int isViewed = 0;
+  //   SharedPreferences prefs = await SharedPreferences.getInstance();
+  //   await prefs.setInt("onBoard", isViewed);
+  // }
+
   bool onLastPage = false;
   @override
   Widget build(BuildContext context) {
@@ -42,14 +48,14 @@ class _OnboardPageState extends State<OnboardPage> {
                           onTap: () {
                             controller.jumpToPage(2);
                           },
-                          child: Text(
-                            "Skip",
-                            style: GoogleFonts.poppins(
-                              color: Colors.grey,
+                          child:  Text(
+                              "Skip",
+                              style: GoogleFonts.poppins(
+                                color: Colors.grey,
+                              ),
                             ),
-                          )),
+                          ),
                   SmoothPageIndicator(
-                    
                     controller: controller,
                     count: 3,
                     effect: const ExpandingDotsEffect(
