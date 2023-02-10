@@ -20,8 +20,8 @@ class _LoginPageState extends State<LoginPage> {
     showDialog(
         context: context,
         builder: (context) {
-          return const Center(
-            child: CircularProgressIndicator(),
+          return  Center(
+            child: CircularProgressIndicator(color: Colors.grey[400]),
           );
         });
     try {
