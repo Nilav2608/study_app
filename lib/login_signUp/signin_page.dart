@@ -36,10 +36,18 @@ class _SignInPageState extends State<SignInPage> {
       await FirebaseAuth.instance.createUserWithEmailAndPassword(
           email: emailController.text.trim(),
           password: passwordController.text.trim());
-          
+      
     }
     // ignore: use_build_context_synchronously
     Navigator.pop(context);
+    const snackBar =  SnackBar(
+        content: Text("Logged in successfully",style: TextStyle(color: Colors.black87),),
+        backgroundColor: Colors.white,
+        behavior: SnackBarBehavior.floating,
+        duration: Duration(milliseconds: 2000),
+        );
+      // ignore: use_build_context_synchronously
+      ScaffoldMessenger.of(context).showSnackBar(snackBar);    
     
   }
 

@@ -34,6 +34,7 @@ class _LoginPageState extends State<LoginPage> {
         behavior: SnackBarBehavior.floating,
         duration: Duration(milliseconds: 2000),
         );
+      // ignore: use_build_context_synchronously
       ScaffoldMessenger.of(context).showSnackBar(snackBar);
 
       // ignore: use_build_context_synchronously
