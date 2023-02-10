@@ -27,8 +27,14 @@ class _LoginPageState extends State<LoginPage> {
     try {
       await FirebaseAuth.instance.signInWithEmailAndPassword(
           email: emailController.text, password: passwordController.text);
-          Navigator.pop(context);
-      
+      Navigator.pop(context);
+      const snackBar =  SnackBar(
+        content: Text("Logged in successfully",style: TextStyle(color: Colors.black87),),
+        backgroundColor: Colors.white,
+        behavior: SnackBarBehavior.floating,
+        duration: Duration(milliseconds: 2000),
+        );
+      ScaffoldMessenger.of(context).showSnackBar(snackBar);
 
       // ignore: use_build_context_synchronously
     } on FirebaseAuthException catch (e) {

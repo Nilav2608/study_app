@@ -38,7 +38,7 @@ class _HomeMainState extends State<HomeMain> {
           //     topLeft: Radius.circular(20), topRight: Radius.circular(20))
           ),
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 15.0, vertical: 20),
+        padding: const EdgeInsets.symmetric(horizontal: 15.0, vertical: 15),
         child: GNav(
           backgroundColor: const Color.fromARGB(255, 31, 31, 57),
           color: const Color.fromARGB(255, 184, 184, 210),
