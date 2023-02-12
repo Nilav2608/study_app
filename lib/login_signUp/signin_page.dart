@@ -23,32 +23,45 @@ class _SignInPageState extends State<SignInPage> {
     passwordVisible = true;
     super.initState();
   }
-    Future signUserUp() async {
+
+  Future signUserUp() async {
     showDialog(
         context: context,
         builder: (context) {
-          return  Center(
-            child: CircularProgressIndicator(color:  Colors.grey[400]),
+          return Center(
+            child: CircularProgressIndicator(color: Colors.grey[400]),
           );
         });
 
-    if (passwordConfirmed()) {
+    if (passwordConfirmed() == true && isChecked == true) {
       await FirebaseAuth.instance.createUserWithEmailAndPassword(
           email: emailController.text.trim(),
           password: passwordController.text.trim());
-      
-    }
-    // ignore: use_build_context_synchronously
-    Navigator.pop(context);
-    const snackBar =  SnackBar(
-        content: Text("Logged in successfully",style: TextStyle(color: Colors.black87),),
+      Navigator.pop(context);
+      const snackBar = SnackBar(
+        content: Text(
+          "Logged in successfully",
+          style: TextStyle(color: Colors.black87),
+        ),
         backgroundColor: Colors.white,
         behavior: SnackBarBehavior.floating,
         duration: Duration(milliseconds: 2000),
-        );
+      );
       // ignore: use_build_context_synchronously
-      ScaffoldMessenger.of(context).showSnackBar(snackBar);    
-    
+      ScaffoldMessenger.of(context).showSnackBar(snackBar);
+    } else {
+      Navigator.pop(context);
+      return showDialog(
+        context: context,
+        builder: (context) {
+          return const AlertDialog(
+            title: Text("accept terms and conditions"),
+          );
+        },
+      );
+    }
+
+    // ignore: use_build_context_synchronously
   }
 
   // / checking
@@ -265,7 +278,8 @@ class _SignInPageState extends State<SignInPage> {
                               child: Text(
                                 "By creating an account you have to agree the terms and conditions",
                                 style: GoogleFonts.poppins(
-                                    color: const Color.fromARGB(255, 184, 184, 210),
+                                    color: const Color.fromARGB(
+                                        255, 184, 184, 210),
                                     fontSize: 12,
                                     fontWeight: FontWeight.normal),
                               ),
