@@ -284,7 +284,7 @@ class _HomePageState extends State<HomePage> {
                             style: GoogleFonts.poppins(
                                 fontWeight: FontWeight.w500,
                                 fontSize: 14,
-                                color: Color.fromARGB(255, 61, 93, 255))),
+                                color: const Color.fromARGB(255, 61, 93, 255))),
                       )
                     ],
                   ),
@@ -303,46 +303,44 @@ class _HomePageState extends State<HomePage> {
                     borderRadius: BorderRadius.circular(10)),
                 child: Padding(
                   padding: const EdgeInsets.all(18.0),
-                  child: Container(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  "Meetup",
-                                  style: GoogleFonts.poppins(
-                                      fontSize: 24,
-                                      color:
-                                          const Color.fromARGB(255, 68, 6, 135),
-                                      fontWeight: FontWeight.w400),
-                                ),
-                                Text(
-                                  " for Off-line learning",
-                                  style: GoogleFonts.poppins(
-                                      fontSize: 12,
-                                      color:
-                                          const Color.fromARGB(255, 68, 6, 135),
-                                      fontWeight: FontWeight.normal),
-                                ),
-                              ],
-                            ),
-                            const SizedBox(
-                              height: 10,
-                            ),
-                            Container(
-                              width: 90,
-                              height: 90,
-                              child: Image.asset('assets/Group 145.png'),
-                            )
-                          ],
-                        ),
-                      ],
-                    ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                "Meetup",
+                                style: GoogleFonts.poppins(
+                                    fontSize: 24,
+                                    color:
+                                        const Color.fromARGB(255, 68, 6, 135),
+                                    fontWeight: FontWeight.w400),
+                              ),
+                              Text(
+                                " for Off-line learning",
+                                style: GoogleFonts.poppins(
+                                    fontSize: 12,
+                                    color:
+                                        const Color.fromARGB(255, 68, 6, 135),
+                                    fontWeight: FontWeight.normal),
+                              ),
+                            ],
+                          ),
+                          const SizedBox(
+                            height: 10,
+                          ),
+                          SizedBox(
+                            width: 90,
+                            height: 90,
+                            child: Image.asset('assets/Group 145.png'),
+                          )
+                        ],
+                      ),
+                    ],
                   ),
                 ),
               ),
