@@ -17,11 +17,7 @@ class GetStartedPage extends StatelessWidget {
             const SizedBox(
               height: 85,
             ),
-            // Image.asset('assets/illustration3.png'),
-            // Lottie.network(
-            //     "https://assets5.lottiefiles.com/packages/lf20_fq7pwzey.json"),
             Lottie.asset("assets/screen3.json"),
-
             const SizedBox(
               height: 65,
             ),
@@ -40,7 +36,7 @@ class GetStartedPage extends StatelessWidget {
             const SizedBox(
               height: 25,
             ),
-            Container(
+            SizedBox(
               height: 72,
               width: 190,
               child: Text(
@@ -66,7 +62,7 @@ class GetStartedPage extends StatelessWidget {
                     onTap: () {
                       Navigator.push(context,
                           MaterialPageRoute(builder: (context) {
-                        return  const StreamPage();
+                        return const StreamPage();
                       }));
                     },
                     child: Container(
@@ -90,7 +86,7 @@ class GetStartedPage extends StatelessWidget {
                     onTap: () {
                       Navigator.push(context,
                           MaterialPageRoute(builder: (context) {
-                        return  const  StreamPage();
+                        return const StreamPage();
                       }));
                     },
                     child: Container(

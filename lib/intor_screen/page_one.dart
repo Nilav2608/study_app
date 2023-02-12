@@ -8,7 +8,7 @@ class PageOne extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 31, 31, 57),
+      backgroundColor: const Color.fromARGB(255, 31, 31, 57),
       body: Center(
         child: Column(
           children: [
@@ -22,7 +22,7 @@ class PageOne extends StatelessWidget {
             const SizedBox(
               height: 35,
             ),
-            Container(
+            SizedBox(
               height: 66,
               width: 168,
               child: Text(
@@ -37,7 +37,7 @@ class PageOne extends StatelessWidget {
             const SizedBox(
               height: 25,
             ),
-            Container(
+            SizedBox(
               height: 48,
               width: 198,
               child: Text(

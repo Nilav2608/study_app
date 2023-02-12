@@ -182,113 +182,111 @@ class _HomePageState extends State<HomePage> {
                 child: Padding(
                   padding:
                       const EdgeInsets.only(top: 18.0, left: 18.0, right: 18.0),
-                  child: Container(
-                    child: Column(
-                      children: [
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Column(
-                              children: [
-                                Row(
-                                  // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                                  children: [
-                                    CircularPercentIndicator(
-                                      radius: 12.0,
-                                      lineWidth: 4.0,
-                                      percent: 0.80,
-                                      backgroundColor: Colors.white,
-                                      progressColor: Colors.grey,
-                                    ),
-                                    const SizedBox(
-                                      width: 10,
-                                    ),
-                                    Text("Learning Plan",
-                                        style: GoogleFonts.poppins(
-                                            fontWeight: FontWeight.w500,
-                                            fontSize: 14,
-                                            color: Colors.white)),
-                                  ],
-                                ),
-                                const SizedBox(
-                                  height: 20,
-                                ),
-                                Row(
-                                  // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                                  children: [
-                                    CircularPercentIndicator(
-                                      radius: 12.0,
-                                      lineWidth: 4.0,
-                                      percent: 0.20,
-                                      backgroundColor: Colors.white,
-                                      progressColor: Colors.grey,
-                                    ),
-                                    const SizedBox(
-                                      width: 10,
-                                    ),
-                                    Text("Learning Plan",
-                                        style: GoogleFonts.poppins(
-                                            fontWeight: FontWeight.w500,
-                                            fontSize: 14,
-                                            color: Colors.white)),
-                                  ],
-                                )
-                              ],
-                            ),
-                            const SizedBox(
-                              height: 10,
-                            ),
-                            Column(
-                              children: [
-                                Row(
-                                  children: [
-                                    Text(
-                                      "40",
+                  child: Column(
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Column(
+                            children: [
+                              Row(
+                                // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                children: [
+                                  CircularPercentIndicator(
+                                    radius: 12.0,
+                                    lineWidth: 4.0,
+                                    percent: 0.80,
+                                    backgroundColor: Colors.white,
+                                    progressColor: Colors.grey,
+                                  ),
+                                  const SizedBox(
+                                    width: 10,
+                                  ),
+                                  Text("Learning Plan",
                                       style: GoogleFonts.poppins(
-                                          color: Colors.white),
-                                    ),
-                                    Text(
-                                      "/48",
+                                          fontWeight: FontWeight.w500,
+                                          fontSize: 14,
+                                          color: Colors.white)),
+                                ],
+                              ),
+                              const SizedBox(
+                                height: 20,
+                              ),
+                              Row(
+                                // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                children: [
+                                  CircularPercentIndicator(
+                                    radius: 12.0,
+                                    lineWidth: 4.0,
+                                    percent: 0.20,
+                                    backgroundColor: Colors.white,
+                                    progressColor: Colors.grey,
+                                  ),
+                                  const SizedBox(
+                                    width: 10,
+                                  ),
+                                  Text("Learning Plan",
                                       style: GoogleFonts.poppins(
-                                          color: const Color.fromARGB(
-                                              255, 184, 184, 210)),
-                                    )
-                                  ],
-                                ),
-                                const SizedBox(
-                                  height: 25,
-                                ),
-                                Row(
-                                  children: [
-                                    Text(
-                                      "40",
-                                      style: GoogleFonts.poppins(
-                                          color: Colors.white),
-                                    ),
-                                    Text(
-                                      "/48",
-                                      style: GoogleFonts.poppins(
-                                          color: const Color.fromARGB(
-                                              255, 184, 184, 210)),
-                                    )
-                                  ],
-                                ),
-                              ],
-                            ),
-                          ],
-                        ),
-                        const SizedBox(
-                          height: 12,
-                        ),
-                        Center(
-                          child: Text("More",
-                              style: GoogleFonts.poppins(
-                                  fontWeight: FontWeight.w500,
-                                  fontSize: 14,
-                                  color: Color.fromARGB(255, 61, 93, 255))),
-                        )
-                      ],
-                    ),
+                                          fontWeight: FontWeight.w500,
+                                          fontSize: 14,
+                                          color: Colors.white)),
+                                ],
+                              )
+                            ],
+                          ),
+                          const SizedBox(
+                            height: 10,
+                          ),
+                          Column(
+                            children: [
+                              Row(
+                                children: [
+                                  Text(
+                                    "40",
+                                    style: GoogleFonts.poppins(
+                                        color: Colors.white),
+                                  ),
+                                  Text(
+                                    "/48",
+                                    style: GoogleFonts.poppins(
+                                        color: const Color.fromARGB(
+                                            255, 184, 184, 210)),
+                                  )
+                                ],
+                              ),
+                              const SizedBox(
+                                height: 25,
+                              ),
+                              Row(
+                                children: [
+                                  Text(
+                                    "40",
+                                    style: GoogleFonts.poppins(
+                                        color: Colors.white),
+                                  ),
+                                  Text(
+                                    "/48",
+                                    style: GoogleFonts.poppins(
+                                        color: const Color.fromARGB(
+                                            255, 184, 184, 210)),
+                                  )
+                                ],
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                      const SizedBox(
+                        height: 12,
+                      ),
+                      Center(
+                        child: Text("More",
+                            style: GoogleFonts.poppins(
+                                fontWeight: FontWeight.w500,
+                                fontSize: 14,
+                                color: Color.fromARGB(255, 61, 93, 255))),
+                      )
+                    ],
                   ),
                 ),
               ),

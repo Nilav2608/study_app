@@ -1,4 +1,3 @@
-import 'package:course_app/login_signUp/login_page.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -37,6 +36,7 @@ class _SignInPageState extends State<SignInPage> {
       await FirebaseAuth.instance.createUserWithEmailAndPassword(
           email: emailController.text.trim(),
           password: passwordController.text.trim());
+      // ignore: use_build_context_synchronously
       Navigator.pop(context);
       const snackBar = SnackBar(
         content: Text(
@@ -175,7 +175,7 @@ class _SignInPageState extends State<SignInPage> {
                               controller: passwordController,
                               style: GoogleFonts.poppins(
                                   fontSize: 14,
-                                  color: Color.fromARGB(255, 255, 255, 255),
+                                  color: const Color.fromARGB(255, 255, 255, 255),
                                   fontWeight: FontWeight.bold),
                               obscureText: passwordVisible,
                               decoration: InputDecoration(
@@ -185,7 +185,7 @@ class _SignInPageState extends State<SignInPage> {
                                 ),
                                 hintText: 'enter your password',
                                 suffixIcon: IconButton(
-                                  color: Color.fromARGB(121, 255, 255, 255),
+                                  color: const Color.fromARGB(121, 255, 255, 255),
                                   icon: Icon(passwordVisible
                                       ? Icons.visibility
                                       : Icons.visibility_off),
@@ -221,7 +221,7 @@ class _SignInPageState extends State<SignInPage> {
                               controller: confirmPasswordController,
                               style: GoogleFonts.poppins(
                                   fontSize: 14,
-                                  color: Color.fromARGB(255, 255, 255, 255),
+                                  color: const Color.fromARGB(255, 255, 255, 255),
                                   fontWeight: FontWeight.bold),
                               obscureText: passwordVisible,
                               decoration: const InputDecoration(

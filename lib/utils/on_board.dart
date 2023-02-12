@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
-import '../Auth_service/stream_builder_file.dart';
 import '../intor_screen/get_started.dart';
 import '../intor_screen/page_one.dart';
 import '../intor_screen/page_two.dart';

@@ -27,6 +27,7 @@ class _LoginPageState extends State<LoginPage> {
     try {
       await FirebaseAuth.instance.signInWithEmailAndPassword(
           email: emailController.text, password: passwordController.text);
+      // ignore: use_build_context_synchronously
       Navigator.pop(context);
       const snackBar =  SnackBar(
         content: Text("Logged in successfully",style: TextStyle(color: Colors.black87),),
@@ -116,7 +117,7 @@ class _LoginPageState extends State<LoginPage> {
                           topLeft: Radius.circular(20)),
                       color: Color.fromARGB(255, 47, 47, 66)),
                   child: Padding(
-                    padding: EdgeInsets.all(20.0),
+                    padding: const EdgeInsets.all(20.0),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -172,7 +173,7 @@ class _LoginPageState extends State<LoginPage> {
                               controller: passwordController,
                               style: GoogleFonts.poppins(
                                   fontSize: 14,
-                                  color: Color.fromARGB(255, 255, 255, 255),
+                                  color: const Color.fromARGB(255, 255, 255, 255),
                                   fontWeight: FontWeight.bold),
                               obscureText: passwordVisible,
                               decoration: InputDecoration(
@@ -182,7 +183,7 @@ class _LoginPageState extends State<LoginPage> {
                                 ),
                                 hintText: 'Enter your password',
                                 suffixIcon: IconButton(
-                                  color: Color.fromARGB(121, 255, 255, 255),
+                                  color: const Color.fromARGB(121, 255, 255, 255),
                                   icon: Icon(passwordVisible
                                       ? Icons.visibility
                                       : Icons.visibility_off),

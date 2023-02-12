@@ -19,7 +19,7 @@ class _AccountPageState extends State<AccountPage> {
     return  Scaffold(
       appBar: AppBar(
         actions: [
-          IconButton(onPressed: logOut, icon: Icon(Icons.logout))
+          IconButton(onPressed: logOut, icon: const Icon(Icons.logout))
         ],
       ),
     );
