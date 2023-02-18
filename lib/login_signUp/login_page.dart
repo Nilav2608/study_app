@@ -1,4 +1,4 @@
-import 'package:course_app/home_main.dart';
+import 'package:course_app/Auth_service/google_signin.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -15,12 +15,12 @@ class _LoginPageState extends State<LoginPage> {
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
 
-  Future logIn() async {
+  Future<dynamic> logIn() async {
     //Show loading circle
     showDialog(
         context: context,
         builder: (context) {
-          return  Center(
+          return Center(
             child: CircularProgressIndicator(color: Colors.grey[400]),
           );
         });
@@ -29,12 +29,15 @@ class _LoginPageState extends State<LoginPage> {
           email: emailController.text, password: passwordController.text);
       // ignore: use_build_context_synchronously
       Navigator.pop(context);
-      const snackBar =  SnackBar(
-        content: Text("Logged in successfully",style: TextStyle(color: Colors.black87),),
+      const snackBar = SnackBar(
+        content: Text(
+          "Logged in successfully",
+          style: TextStyle(color: Colors.black87),
+        ),
         backgroundColor: Colors.white,
         behavior: SnackBarBehavior.floating,
         duration: Duration(milliseconds: 2000),
-        );
+      );
       // ignore: use_build_context_synchronously
       ScaffoldMessenger.of(context).showSnackBar(snackBar);
 
@@ -48,6 +51,7 @@ class _LoginPageState extends State<LoginPage> {
         wrongPassword();
       }
     }
+    return true;
   }
 
   @override
@@ -173,7 +177,8 @@ class _LoginPageState extends State<LoginPage> {
                               controller: passwordController,
                               style: GoogleFonts.poppins(
                                   fontSize: 14,
-                                  color: const Color.fromARGB(255, 255, 255, 255),
+                                  color:
+                                      const Color.fromARGB(255, 255, 255, 255),
                                   fontWeight: FontWeight.bold),
                               obscureText: passwordVisible,
                               decoration: InputDecoration(
@@ -183,7 +188,8 @@ class _LoginPageState extends State<LoginPage> {
                                 ),
                                 hintText: 'Enter your password',
                                 suffixIcon: IconButton(
-                                  color: const Color.fromARGB(121, 255, 255, 255),
+                                  color:
+                                      const Color.fromARGB(121, 255, 255, 255),
                                   icon: Icon(passwordVisible
                                       ? Icons.visibility
                                       : Icons.visibility_off),
@@ -282,6 +288,7 @@ class _LoginPageState extends State<LoginPage> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             GestureDetector(
+                              onTap: () => AuthService().signInWithGoogle(),
                               child: Image.asset(
                                 "assets/google.png",
                                 width: 34,

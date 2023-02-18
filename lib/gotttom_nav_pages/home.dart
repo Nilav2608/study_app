@@ -1,5 +1,6 @@
 import 'package:course_app/utils/container1.dart';
 import 'package:course_app/utils/container2.dart';
+// import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:percent_indicator/percent_indicator.dart';
@@ -14,6 +15,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
+    // final user = FirebaseAuth.instance.currentUser!;
     return Scaffold(
         // appBar: AppBar(
         //   backgroundColor: const Color.fromARGB(255, 61, 92, 255),
